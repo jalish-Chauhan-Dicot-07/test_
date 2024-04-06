@@ -1,4 +1,4 @@
-
+// require('node-fetch').then((resp)=>console.log(resp))
 const api = [
     {
     "/": {
@@ -14,6 +14,8 @@ const api = [
 },
 ];
 const testingAPI = async () => {
+  const {default: fetch} = await import("node-fetch");
+
     for (const i of api) {
         const [obj] = Object.values(i);
         const { param, method } = obj;
