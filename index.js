@@ -6,12 +6,12 @@ app.use(express.urlencoded({extended:true}));
 
 app.get('/',(req,res)=>{
     console.log(' / GET');
-    return res.send({status:200,message:`Hello ${req.query.name }`})
+    return res.send({status:200,data:`Hello ${req.query.name }`})
 })
 
 app.post('/post',(req,res)=>{
     console.log(' / POST');
-    return res.send({status:200,data:"POST Request"})
+    return res.send({status:200,message:"POST Request"})
 })
 
 
