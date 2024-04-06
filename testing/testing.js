@@ -20,7 +20,7 @@ const testingAPI = async () => {
         const [obj] = Object.values(i);
         const { param, method } = obj;
         const response = await fetch(
-        `http://localhost:8000${Object.keys(i)}?name=${encodeURIComponent(param)}`,
+        `https://test-3sz1.onrender.com${Object.keys(i)}?name=${encodeURIComponent(param)}`,
       { method: method }
     );
 
