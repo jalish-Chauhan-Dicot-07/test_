@@ -29,7 +29,7 @@ jobs:
 
       # Run npm start command
       - name: Start application
-        run: npm start
+        run: npm install
 
       # Run npm test command
       - name: Run tests
@@ -58,6 +58,6 @@ jobs:
       - name: Render Deploy Action
         uses: jalish-Chauhan-Dicot-07/render-deploy-action@v0.0.8
         with:
-          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
-          api-key: ${{ secrets.MY_RENDER_API_KEY }}
+          service-id: srv-co8egfv109ks73ed9fv0?key=zOkL3z42FtA
+          api-key: rnd_ztF9piodvNQ3byZ1AZiy9KUJFu9l
           wait-for-success: true
