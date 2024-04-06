@@ -12,7 +12,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # Build job
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -25,30 +25,34 @@ jobs:
         with:
           node-version: 18
 
-      # Run npm start command
-      - name: Start application
+      # Install dependencies
+      - name: Install dependencies
         run: npm install
 
-      # Run npm test command
+      # Run tests
       - name: Run tests
         run: npm test
 
-      # Runs a single command using the runners shell
+      # Print a message
       - name: Print a message
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
+      # Print multi-line message
       - name: Print multi-line message
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  # Merge branches job
   merge-branches:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout code
       - name: Checkout code
         uses: actions/checkout@v2
       
+      # Merge branches
       - name: Merge branches
         run: |
           # Assuming the current branch is main
@@ -56,6 +60,7 @@ jobs:
           git checkout main
           git merge --no-ff ${{ github.ref }}
           git push origin main
+
   # Deployment job
   deploy:
     runs-on: ubuntu-latest
