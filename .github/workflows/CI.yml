@@ -56,7 +56,7 @@ jobs:
 
       # Use render-deploy-action for deployment
       - name: Render Deploy Action
-        uses: jalish-Chauhan-Dicot-07/render-deploy-action@v0.0.8
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: srv-co8egfv109ks73ed9fv0?key=zOkL3z42FtA
           api-key: rnd_ztF9piodvNQ3byZ1AZiy9KUJFu9l
