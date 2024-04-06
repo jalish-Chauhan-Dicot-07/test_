@@ -10,6 +10,7 @@ app.get('/',(req,res)=>{
 })
 
 app.post('/post',(req,res)=>{
+    console.log(' / POST');
     return res.send({status:200,message:"POST Request"})
 })
 
