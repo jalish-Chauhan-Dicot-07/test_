@@ -42,7 +42,20 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  merge-branches:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Merge branches
+        run: |
+          # Assuming the current branch is main
+          git fetch origin
+          git checkout main
+          git merge --no-ff ${{ github.ref }}
+          git push origin main
   # Deployment job
   deploy:
     runs-on: ubuntu-latest
