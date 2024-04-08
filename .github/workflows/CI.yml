@@ -2,7 +2,7 @@ name: CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -33,18 +33,6 @@ jobs:
           echo test, and deploy your project.
 
   deploy:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: Deploy to production
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            git clone https://github.com/jalish-Chauhan-Dicot-07/test_.git /CloneProject/
-            chmod +x /CloneProject/script.sh
-            /CloneProject/script.sh
-          wait-for-success: true
+    runs-on: self-hosted
+    
+
