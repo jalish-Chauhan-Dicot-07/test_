@@ -11,7 +11,7 @@ app.get('/',(req,res)=>{
 })
 
 app.post('/post',(req,res)=>{
-    console.log(' / POST');
+    
     console.log(req.body)
     return res.send({status:200,message:"POST Request"})
 })
